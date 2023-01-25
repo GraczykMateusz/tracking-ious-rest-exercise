@@ -30,6 +30,6 @@ public class IOU {
 
     @Embedded
     @AttributeOverrides(
-            @AttributeOverride(name = "amount", column = @Column(name = "borrower", nullable = false)))
+            @AttributeOverride(name = "amount", column = @Column(name = "amount", nullable = false)))
     private Money money;
 }
