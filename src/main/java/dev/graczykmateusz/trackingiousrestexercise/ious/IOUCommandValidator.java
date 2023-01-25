@@ -10,8 +10,8 @@ public class IOUCommandValidator {
 
     private final UserService userService;
 
-    void validate(CreateIOURequest cmd) {
-        userService.checkExistence(cmd.getLender().getUserName());
-        userService.checkExistence(cmd.getBorrower().getUserName());
+    void validate(CreateIOURequest request) {
+        userService.checkExistence(request.getLender().getUserName());
+        userService.checkExistence(request.getBorrower().getUserName());
     }
 }

@@ -3,6 +3,7 @@ package dev.graczykmateusz.trackingiousrestexercise.user;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Builder
 @AllArgsConstructor
@@ -11,14 +12,9 @@ import javax.persistence.*;
 @Setter
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false)
-    private Long id;
-
-    @Embedded
+    @EmbeddedId
     @Column(name = "name", nullable = false)
     private UserName userName;
 }
