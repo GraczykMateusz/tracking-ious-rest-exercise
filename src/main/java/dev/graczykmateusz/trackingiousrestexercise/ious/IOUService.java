@@ -8,13 +8,18 @@ import org.springframework.stereotype.Service;
 public class IOUService {
 
     private final IOURepository iouRepository;
+    private final IOUCommandValidator iouCommandValidator;
+    private final IOUDTOMapper iouDTOMapper;
 
-    public IOU create(CreateIOUCommand cmd) {
+    public IOUDTO create(CreateIOURequest request) {
+//        iouCommandValidator.validate(request);
+
         IOU iou = IOU.builder()
-                .borrower(cmd.getBorrower().getName())
-                .lender(cmd.getLender().getName())
-                .amount(cmd.getAmount())
+                .borrower(request.getBorrower())
+                .lender(request.getLender())
+                .money(request.getMoney())
                 .build();
-        return iouRepository.save(iou);
+        iou = iouRepository.save(iou);
+        return iouDTOMapper.apply(iou);
     }
 }

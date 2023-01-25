@@ -16,7 +16,7 @@ class IOUController {
     private final IOUService iouService;
 
     @PostMapping
-    IOU createIOU(@Valid @RequestBody CreateIOUCommand cmd) {
-        return iouService.create(cmd);
+    IOUDTO createIOU(@Valid @RequestBody CreateIOURequest request) {
+        return iouService.create(request);
     }
 }

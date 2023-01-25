@@ -12,13 +12,14 @@ import java.io.Serializable;
 @Setter
 @Entity
 @Table(name = "users")
-public class UserDAO implements Serializable {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false)
     private Long id;
 
+    @Embedded
     @Column(name = "name", nullable = false)
-    private String name;
+    private UserName userName;
 }

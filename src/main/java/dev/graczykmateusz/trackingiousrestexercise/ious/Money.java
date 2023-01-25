@@ -4,25 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
+import javax.persistence.Embeddable;
 import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 
+@Embeddable
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateIOUCommand {
+public class Money {
 
-    @Valid
-    @NotNull
-    private Lender lender;
-
-    @Valid
-    @NotNull
-    private Borrower borrower;
-
-    @NotNull
     @Positive
-    private BigDecimal amount;
+    BigDecimal amount;
 }

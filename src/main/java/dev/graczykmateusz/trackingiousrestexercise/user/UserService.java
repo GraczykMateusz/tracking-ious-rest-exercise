@@ -4,26 +4,32 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.function.Function;
 
 @Service
 @RequiredArgsConstructor
 public class UserService {
 
     private final UserRepository userRepository;
+    private final UserDTOMapper userDTOMapper;
+    private final UserMapper userMapper;
 
-    public List<UserDAO> getUsers() {
-        return userRepository.findAll();
-    }
-
-    public List<UserDAO> createUsers(CreateUsersCommand cmd) {
-        List<UserDAO> userDAOS = cmd.getUsers().stream()
-                .map(createUsers)
+    public List<UserDTO> getUsers() {
+        return userRepository.findAll().stream()
+                .map(userDTOMapper)
                 .toList();
-        return userRepository.saveAll(userDAOS);
     }
 
-    private final Function<UserDTO, UserDAO> createUsers = user -> UserDAO.builder()
-            .name(user.getName())
-            .build();
+    public List<UserDTO> createUsers(CreateUsersRequest request) {
+        List<User> users = request.getUsers().stream()
+                .map(userMapper)
+                .toList();
+        return userRepository.saveAll(users).stream()
+                .map(userDTOMapper)
+                .toList();
+    }
+
+    public void checkExistence(UserName userName) {
+        userRepository.findByUserName(userName)
+                .orElseThrow(() -> new UserNotFoundException(userName));
+    }
 }

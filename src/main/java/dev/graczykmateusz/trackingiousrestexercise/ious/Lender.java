@@ -1,12 +1,19 @@
 package dev.graczykmateusz.trackingiousrestexercise.ious;
 
-import lombok.Value;
+import dev.graczykmateusz.trackingiousrestexercise.user.UserName;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.NotBlank;
+import javax.persistence.Embeddable;
+import javax.validation.constraints.NotNull;
 
-@Value
+@Embeddable
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Lender {
 
-    @NotBlank
-    String name;
+    @NotNull
+    private UserName userName;
 }

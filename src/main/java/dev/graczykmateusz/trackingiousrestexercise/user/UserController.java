@@ -14,12 +14,12 @@ class UserController {
     private final UserService userService;
 
     @GetMapping
-    List<UserDAO> getUsers() {
+    List<UserDTO> getUsers() {
         return userService.getUsers();
     }
 
     @PostMapping
-    List<UserDAO> createUsers(@Valid @RequestBody CreateUsersCommand cmds) {
-        return userService.createUsers(cmds);
+    List<UserDTO> createUsers(@Valid @RequestBody CreateUsersRequest request) {
+        return userService.createUsers(request);
     }
 }

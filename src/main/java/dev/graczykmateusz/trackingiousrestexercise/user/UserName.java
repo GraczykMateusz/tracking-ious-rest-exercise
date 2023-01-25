@@ -3,17 +3,16 @@ package dev.graczykmateusz.trackingiousrestexercise.user;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
-import javax.validation.Valid;
-import java.util.List;
+import javax.persistence.Embeddable;
+import javax.validation.constraints.NotBlank;
 
+@Embeddable
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateUsersCommand {
+public class UserName {
 
-    @Valid
-    @NonNull
-    private List<UserDTO> users;
+    @NotBlank
+    private String name;
 }

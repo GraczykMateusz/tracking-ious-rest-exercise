@@ -18,12 +18,18 @@ public class IOU {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private String lender;
+    @Embedded
+    @AttributeOverrides(
+            @AttributeOverride(name = "userName.name", column = @Column(name = "lender", nullable = false)))
+    private Lender lender;
 
-    @Column(nullable = false)
-    private String borrower;
+    @Embedded
+    @AttributeOverrides(
+            @AttributeOverride(name = "userName.name", column = @Column(name = "borrower", nullable = false)))
+    private Borrower borrower;
 
-    @Column(nullable = false)
-    private BigDecimal amount;
+    @Embedded
+    @AttributeOverrides(
+            @AttributeOverride(name = "amount", column = @Column(name = "borrower", nullable = false)))
+    private Money money;
 }
