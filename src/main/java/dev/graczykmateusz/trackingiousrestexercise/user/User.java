@@ -3,7 +3,6 @@ package dev.graczykmateusz.trackingiousrestexercise.user;
 import lombok.*;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Builder
 @AllArgsConstructor
@@ -12,7 +11,7 @@ import java.io.Serializable;
 @Setter
 @Entity
 @Table(name = "users")
-public class User implements Serializable {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
