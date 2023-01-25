@@ -13,7 +13,7 @@ public class IOUDTOMapper implements Function<IOU, IOUDTO> {
                 iou.getId(),
                 iou.getLender().getUserName().getName(),
                 iou.getBorrower().getUserName().getName(),
-                iou.getAmount()
+                iou.getMoney().getAmount()
         );
     }
 }
