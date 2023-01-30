@@ -1,12 +1,13 @@
 package dev.graczykmateusz.trackingiousrestexercise.ious;
 
+import dev.graczykmateusz.trackingiousrestexercise.ious.dto.IOUReadModel;
+import dev.graczykmateusz.trackingiousrestexercise.ious.dto.IOUsReadModel;
+import dev.graczykmateusz.trackingiousrestexercise.ious.requests.CreateIOURequest;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -16,7 +17,12 @@ class IOUController {
     private final IOUService iouService;
 
     @PostMapping
-    IOUDTO createIOU(@Valid @RequestBody CreateIOURequest request) {
-        return iouService.create(request);
+    IOUReadModel createIOU(@Valid @RequestBody CreateIOURequest request) {
+        return iouService.createIOU(request);
+    }
+
+    @GetMapping
+    List<IOUsReadModel> getIOUs() {
+        return iouService.getAllIOUs();
     }
 }

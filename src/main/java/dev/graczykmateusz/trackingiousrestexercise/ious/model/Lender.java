@@ -1,5 +1,6 @@
-package dev.graczykmateusz.trackingiousrestexercise.ious;
+package dev.graczykmateusz.trackingiousrestexercise.ious.model;
 
+import dev.graczykmateusz.trackingiousrestexercise.users.model.UserDetails;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,17 +11,9 @@ import javax.validation.constraints.NotNull;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateIOURequest {
+public class Lender {
 
     @Valid
     @NotNull
-    private Lender lender;
-
-    @Valid
-    @NotNull
-    private Borrower borrower;
-
-    @Valid
-    @NotNull
-    private Money money;
+    private UserDetails user;
 }

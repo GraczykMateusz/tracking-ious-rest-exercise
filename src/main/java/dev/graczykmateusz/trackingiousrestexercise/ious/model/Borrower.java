@@ -1,19 +1,19 @@
-package dev.graczykmateusz.trackingiousrestexercise.ious;
+package dev.graczykmateusz.trackingiousrestexercise.ious.model;
 
-import dev.graczykmateusz.trackingiousrestexercise.user.UserName;
+import dev.graczykmateusz.trackingiousrestexercise.users.model.UserDetails;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Embeddable;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-@Embeddable
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Borrower {
 
+    @Valid
     @NotNull
-    private UserName userName;
+    private UserDetails user;
 }

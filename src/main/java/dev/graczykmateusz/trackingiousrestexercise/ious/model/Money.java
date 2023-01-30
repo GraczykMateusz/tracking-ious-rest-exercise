@@ -1,4 +1,4 @@
-package dev.graczykmateusz.trackingiousrestexercise.ious;
+package dev.graczykmateusz.trackingiousrestexercise.ious.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,5 +15,5 @@ import java.math.BigDecimal;
 public class Money {
 
     @Positive
-    BigDecimal amount;
+    private BigDecimal amount;
 }

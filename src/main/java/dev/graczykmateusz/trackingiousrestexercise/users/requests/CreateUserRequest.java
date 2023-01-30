@@ -1,19 +1,19 @@
-package dev.graczykmateusz.trackingiousrestexercise.user;
+package dev.graczykmateusz.trackingiousrestexercise.users.requests;
 
+import dev.graczykmateusz.trackingiousrestexercise.users.model.UserDetails;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import javax.validation.Valid;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateUsersRequest {
+public class CreateUserRequest {
 
     @Valid
     @NonNull
-    private List<UserName> users;
+    private UserDetails user;
 }
