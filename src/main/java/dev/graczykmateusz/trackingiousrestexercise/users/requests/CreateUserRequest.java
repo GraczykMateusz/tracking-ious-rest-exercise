@@ -1,12 +1,11 @@
 package dev.graczykmateusz.trackingiousrestexercise.users.requests;
 
 import dev.graczykmateusz.trackingiousrestexercise.users.model.UserDetails;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
-
-import javax.validation.Valid;
 
 @Data
 @AllArgsConstructor
@@ -14,6 +13,6 @@ import javax.validation.Valid;
 public class CreateUserRequest {
 
     @Valid
-    @NonNull
+    @NotNull
     private UserDetails user;
 }

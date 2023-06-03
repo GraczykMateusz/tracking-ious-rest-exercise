@@ -1,9 +1,9 @@
 package dev.graczykmateusz.trackingiousrestexercise.users.model;
 
 import dev.graczykmateusz.trackingiousrestexercise.ious.model.Money;
+import jakarta.persistence.*;
 import lombok.*;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Map;
 

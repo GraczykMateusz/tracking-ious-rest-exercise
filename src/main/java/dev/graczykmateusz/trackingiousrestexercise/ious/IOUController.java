@@ -3,10 +3,10 @@ package dev.graczykmateusz.trackingiousrestexercise.ious;
 import dev.graczykmateusz.trackingiousrestexercise.ious.dto.IOUReadModel;
 import dev.graczykmateusz.trackingiousrestexercise.ious.dto.IOUsReadModel;
 import dev.graczykmateusz.trackingiousrestexercise.ious.requests.CreateIOURequest;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController

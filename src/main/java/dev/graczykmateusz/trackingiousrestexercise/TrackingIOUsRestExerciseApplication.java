@@ -9,5 +9,4 @@ public class TrackingIOUsRestExerciseApplication {
     public static void main(String[] args) {
         SpringApplication.run(TrackingIOUsRestExerciseApplication.class, args);
     }
-
 }

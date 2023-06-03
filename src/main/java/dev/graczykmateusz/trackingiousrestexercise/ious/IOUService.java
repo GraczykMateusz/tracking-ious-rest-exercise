@@ -45,7 +45,7 @@ public class IOUService {
 
         lenderUser.getIous().put(borrowerUser, money);
 
-        lenderUser = userRepository.save(lenderUser);
+        userRepository.save(lenderUser);
 
         return iouReadModelMapper.apply(lenderUser);
     }

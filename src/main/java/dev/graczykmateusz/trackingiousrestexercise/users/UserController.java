@@ -3,10 +3,10 @@ package dev.graczykmateusz.trackingiousrestexercise.users;
 import dev.graczykmateusz.trackingiousrestexercise.users.dto.UserReadModel;
 import dev.graczykmateusz.trackingiousrestexercise.users.model.User;
 import dev.graczykmateusz.trackingiousrestexercise.users.requests.CreateUserRequest;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController

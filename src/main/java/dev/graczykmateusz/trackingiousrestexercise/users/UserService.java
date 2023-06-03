@@ -25,7 +25,7 @@ public class UserService {
 
     public UserReadModel createUser(CreateUserRequest request) {
         User user = requestUserMapper.apply(request.getUser());
-        user = userRepository.save(user);
+        userRepository.save(user);
         return userReadModelMapper.apply(user);
     }
 }
